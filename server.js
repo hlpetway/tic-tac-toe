@@ -1,10 +1,12 @@
 'use strict';
 
 var express = require('express');
+var http = require('http');
+
 var app = express();
+app.set('port', process.env.PORT || 3000);
 
-var server = https.createServer(options, app);
-server.listen(process.env.PORT || 3000, function() {
-  console.log('server running on port: ' + process.env.PORT || 3000);
+var server = http.createServer(app);
+server.listen(app.get('port'), function() {
+  console.log('Server running on ' + app.get('port'));
 });
-
