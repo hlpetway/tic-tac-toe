@@ -9,37 +9,8 @@ module.exports = function(grunt) {
       options: {
         jshintrc: true
       },
-      all: ['Gruntfile.js', 'server.js','app/js/**/*.js']
+      all: ['Gruntfile.js', 'server.js','app/**/*.js']
     },
-    // clean: ['client'],
-    // copy: {
-    //   all: {
-    //     expand: true,
-    //     cwd: './app',
-    //     src: ['views/*.html', './*.html', '!Gruntfile.js'],
-    //     dest: 'client/',
-    //     flatten: false,
-    //     filter: 'isFile'
-    //   },
-    //   design: {
-    //     expand: true,
-    //     cwd: './design',
-    //     src: ['sass/**/*', 'stylesheets/*.css', 'images/**/*', 'user_home.js'],
-    //     dest: 'client/',
-    //     flatten: false,
-    //     filter: 'isFile'
-    //   }
-    // },
-    // browserify: {
-    //   all: {
-    //     src: 'app/js/**/*.js',
-    //     dest: 'client/client.js'
-    //   },
-    //   options: {
-    //     transform: ['debowerify'],
-    //     debug: true
-    //   }
-    // },
     express: {
       dev: {
         options: {
@@ -61,6 +32,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('serve', [ 'express:dev' ]);
-  grunt.registerTask('jshint', ['jshint']);
+  grunt.registerTask('serve', ['express:dev']);
+  grunt.registerTask('test', ['jshint']);
 };
