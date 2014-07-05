@@ -1,0 +1,12 @@
+{
+  "name": "go-outside",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.0",
+    "passport-http": "*"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "^0.10.0",
+    "matchdep": "^0.3.0"
+  }
+}
