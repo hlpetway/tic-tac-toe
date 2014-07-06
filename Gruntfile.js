@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         all: {
             expand: true,
             cwd: 'app/',
-            src: ['*.css', '*.html', 'images/**/*', '!Gruntfile.js'],
+            src: ['*.css', '*.html', '!Gruntfile.js'],
             dest: 'dist/',
             flatten: true,
             filter: 'isFile'
@@ -29,13 +29,6 @@ module.exports = function(grunt) {
         options: {
             debug: true
         }
-    },
-
-    jshint: {
-      options: {
-        jshintrc: true
-      },
-      all: ['Gruntfile.js', 'server.js','app/**/*.js']
     },
 
     watch: {

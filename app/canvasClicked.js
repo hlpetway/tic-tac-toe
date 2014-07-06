@@ -1,11 +1,11 @@
 module.exports = function canvasClicked (canvasNumber) {
   var turn = 0;
   var squaresFilled = 0;
-  var theCanvas = canvasNumber.toString();
+  var theCanvas = "canvas" + canvasNumber;
   var c = document.getElemenById(theCanvas);
   var cxt = c.getContext("2d");
 
-  if(painted[canvasNumber -1] === false){
+  if(painted[canvasNumber-1] === false){
     if(turn % 2 === 0){
       cxt.beginPath();
       cxt.moveTo(10,10);
