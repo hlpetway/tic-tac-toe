@@ -5,46 +5,41 @@ var canvasClicked = require("./canvasClicked");
   //Instanciate Arrays
 window.onload=function(){
 
-console.log("hello!");
-
   var painted = [];
   var content = [];
+  var turn = [0];
 
   for(var i = 0; i <= 8; i++) {
   painted[i] = false;
   content[i] = "";
   }
 
-  console.log("This is before we add the listeners");
-
   var canvas1 = document.getElementById("canvas1");
-  canvas1.addEventListener("dblclick", function(){canvasClicked(1, painted, content)});
+  canvas1.addEventListener("dblclick", function(){canvasClicked(1, painted, turn, content)});
 
   var canvas2 = document.getElementById("canvas2");
-  canvas2.addEventListener("dblclick", function(){canvasClicked(2, painted, content)});
+  canvas2.addEventListener("dblclick", function(){canvasClicked(2, painted, turn, content)});
 
   var canvas3 = document.getElementById("canvas3");
-  canvas3.addEventListener("dblclick", function(){canvasClicked(3, painted, content)});
+  canvas3.addEventListener("dblclick", function(){canvasClicked(3, painted, turn, content)});
 
   var canvas4 = document.getElementById("canvas4");
-  canvas4.addEventListener("dblclick", function(){canvasClicked(4, painted, content)});
+  canvas4.addEventListener("dblclick", function(){canvasClicked(4, painted, turn, content)});
 
   var canvas5 = document.getElementById("canvas5");
-  canvas5.addEventListener("dblclick", function(){canvasClicked(5, painted, content)});
+  canvas5.addEventListener("dblclick", function(){canvasClicked(5, painted, turn, content)});
 
   var canvas6 = document.getElementById("canvas6");
-  canvas6.addEventListener("dblclick", function(){canvasClicked(6, painted, content)});
+  canvas6.addEventListener("dblclick", function(){canvasClicked(6, painted, turn, content)});
 
   var canvas7 = document.getElementById("canvas7");
-  canvas7.addEventListener("dblclick", function(){canvasClicked(7, painted, content)});
+  canvas7.addEventListener("dblclick", function(){canvasClicked(7, painted, turn, content)});
 
   var canvas8 = document.getElementById("canvas8");
-  canvas8.addEventListener("dblclick", function(){canvasClicked(8, painted, content)});
+  canvas8.addEventListener("dblclick", function(){canvasClicked(8, painted, turn, content)});
 
   var canvas9 = document.getElementById("canvas9");
-  canvas9.addEventListener("dblclick", function(){canvasClicked(9, painted, content)});
-
-  console.log("This is after we add the listeners");
+  canvas9.addEventListener("dblclick", function(){canvasClicked(9, painted, turn, content)});
 
 };
 
@@ -55,19 +50,15 @@ console.log("hello!");
 var playAgain = require("./playAgain");
 var checkForWinners = require("./checkForWinners");
 
-module.exports = function (canvasNumber, painted, content) {
+module.exports = function (canvasNumber, painted, turn, content) {
 
-  var turn = 0;
   var squaresFilled = 0;
-  // console.log(canvasNumber);
   var theCanvas = "canvas" + canvasNumber;
-  console.log(theCanvas);
   var c = document.getElementById(theCanvas);
-  console.log(c);
   var cxt = c.getContext("2d");
 
   if(painted[canvasNumber-1] === false){
-    if(turn % 2 === 0){
+    if(turn[0] % 2 === 0){
       cxt.beginPath();
       cxt.moveTo(10,10);
       cxt.lineTo(40,40);
@@ -84,18 +75,18 @@ module.exports = function (canvasNumber, painted, content) {
       cxt.closePath();
       content[canvasNumber-1] = "0";
     }
-    turn++;
+    turn[0] = turn[0] + 1;
     painted[canvasNumber-1] = true;
     squaresFilled++;
     checkForWinners(content[canvasNumber-1], content);
 
     if(squaresFilled === 9){
-      alert("The Game Is Over!");
+      window.alert("The Game Is Over!");
       playAgain();
     }
 
   } else {
-    alert("That Space Is already Occupied!");
+    window.alert("That Space Is already Occupied!");
   }
 };
 
@@ -112,7 +103,7 @@ module.exports = function checkForWinners(symbol, content) {
     if(content[winningCombinations[i][0]] ===
     symbol && content[winningCombinations[i][1]] ===
     symbol && content[winningCombinations[i][2]] === symbol){
-      alert(symbol + " Won!");
+      window.alert(symbol + " Won!");
       playAgain();
     }
     }
@@ -124,11 +115,11 @@ module.exports = function checkForWinners(symbol, content) {
 module.exports = function playAgain(){
   var y = confirm("Play Again?");
   if(y === true){
-    alert("Okay! ^^/>");
+    window.alert("Okay! Here goes!");
     document.location.reload(true);
   }
   else {
-    alert("So Long, Sucker!");
+    window.alert("So Long, Sucker!");
   }
 };
 

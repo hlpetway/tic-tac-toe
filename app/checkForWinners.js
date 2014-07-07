@@ -8,7 +8,7 @@ module.exports = function checkForWinners(symbol, content) {
     if(content[winningCombinations[i][0]] ===
     symbol && content[winningCombinations[i][1]] ===
     symbol && content[winningCombinations[i][2]] === symbol){
-      alert(symbol + " Won!");
+      window.alert(symbol + " Won!");
       playAgain();
     }
     }
