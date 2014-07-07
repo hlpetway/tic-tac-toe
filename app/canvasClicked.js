@@ -8,8 +8,11 @@ module.exports = function (canvasNumber, painted, content) {
 
   var turn = 0;
   var squaresFilled = 0;
+  // console.log(canvasNumber);
   var theCanvas = "canvas" + canvasNumber;
+  console.log(theCanvas);
   var c = document.getElementById(theCanvas);
+  console.log(c);
   var cxt = c.getContext("2d");
 
   if(painted[canvasNumber-1] === false){
@@ -36,12 +39,12 @@ module.exports = function (canvasNumber, painted, content) {
     checkForWinners(content[canvasNumber-1], content);
 
     if(squaresFilled === 9){
-      console.log("The Game Is Over!");
+      alert("The Game Is Over!");
       playAgain();
     }
 
   } else {
-    console.log("That Space Is already Occupied With Your Heart!");
+    alert("That Space Is already Occupied!");
   }
 };
 

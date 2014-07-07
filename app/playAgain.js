@@ -3,10 +3,10 @@
 module.exports = function playAgain(){
   var y = confirm("Play Again?");
   if(y === true){
-    console.log("Okay! ^^/>");
+    alert("Okay! ^^/>");
     document.location.reload(true);
   }
   else {
-    console.log("So Long, Sucker!");
+    alert("So Long, Sucker!");
   }
 };
