@@ -1,4 +1,11 @@
+"use strict";
+
+var app = require("./app");
+var checkForWinners = require("./checkForWinners");
+var playAgain = require("./playAgain");
+
 module.exports = function canvasClicked (canvasNumber) {
+console.log("I got to the canvasClicked");
   var turn = 0;
   var squaresFilled = 0;
   var theCanvas = "canvas" + canvasNumber;
@@ -37,3 +44,5 @@ module.exports = function canvasClicked (canvasNumber) {
     console.log("That Space Is already Occupied With Your Heart!");
   }
 };
+
+
