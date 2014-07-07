@@ -1,15 +1,15 @@
 "use strict";
 
-var app = require("./app");
-var checkForWinners = require("./checkForWinners");
-var playAgain = require("./playAgain");
 
-module.exports = function canvasClicked (canvasNumber) {
-console.log("I got to the canvasClicked");
+var playAgain = require("./playAgain");
+var checkForWinners = require("./checkForWinners");
+
+module.exports = function (canvasNumber, painted, content) {
+
   var turn = 0;
   var squaresFilled = 0;
   var theCanvas = "canvas" + canvasNumber;
-  var c = document.getElemenById(theCanvas);
+  var c = document.getElementById(theCanvas);
   var cxt = c.getContext("2d");
 
   if(painted[canvasNumber-1] === false){
@@ -33,9 +33,9 @@ console.log("I got to the canvasClicked");
     turn++;
     painted[canvasNumber-1] = true;
     squaresFilled++;
-    checkForWinners(content[canvasNumber-1]);
+    checkForWinners(content[canvasNumber-1], content);
 
-    if(squaresFilled == 9){
+    if(squaresFilled === 9){
       console.log("The Game Is Over!");
       playAgain();
     }

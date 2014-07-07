@@ -1,51 +1,48 @@
 "use strict";
 var canvasClicked = require("./canvasClicked");
 
-var app = function(){
-
   //Instanciate Arrays
-  window.onload=function(){
-    var painted = [];
-    var content = [];
-    var winningCombinations = [[0,1,2],[3,4,5],[6,7,8],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+window.onload=function(){
 
-    for(var i = 0; i <= 8; i++) {
-    painted[i] = false;
-    content[i] = "";
-    }
+console.log("hello!");
 
-    var canvas1 = document.getElemenById("canvas1");
-    canvas1.addEventListener = ('onclick', canvasClicked(1));
+  var painted = [];
+  var content = [];
 
-    var canvas2 = document.getElemenById("canvas2");
-    canvas2.addEventListener = ('onclick', canvasClicked(2));
+  for(var i = 0; i <= 8; i++) {
+  painted[i] = false;
+  content[i] = "";
+  }
 
-    var canvas3 = document.getElemenById("canvas3");
-    canvas3.addEventListener = ('onclick', canvasClicked(3));
+  console.log("This is before we add the listeners");
 
-    var canvas4 = document.getElemenById("canvas4");
-    canvas4.addEventListener = ('onclick', canvasClicked(4));
+  var canvas1 = document.getElementById("canvas1");
+  canvas1.addEventListener("dblclick", canvasClicked(1, painted, content), false);
 
-    var canvas5 = document.getElemenById("canvas5");
-    canvas5.addEventListener = ('onclick', canvasClicked(5));
+  var canvas2 = document.getElementById("canvas2");
+  canvas2.addEventListener("dblclick", canvasClicked(2, painted, content), false);
 
-    var canvas6 = document.getElemenById("canvas6");
-    canvas6.addEventListener = ('onclick', canvasClicked(6));
+  var canvas3 = document.getElementById("canvas3");
+  canvas3.addEventListener("dblclick", canvasClicked(3, painted, content), false);
 
-    var canvas7 = document.getElemenById("canvas7");
-    canvas7.addEventListener = ('onclick', canvasClicked(7));
+  var canvas4 = document.getElementById("canvas4");
+  canvas4.addEventListener("dblclick", canvasClicked(4, painted, content), false);
 
-    var canvas8 = document.getElemenById("canvas8");
-    canvas8.addEventListener = ('onclick', canvasClicked(8));
+  var canvas5 = document.getElementById("canvas5");
+  canvas5.addEventListener("dblclick", canvasClicked(5, painted, content), false);
 
-    var canvas9 = document.getElemenById("canvas9");
-    canvas9.addEventListener = ('onclick', canvasClicked(9));
+  var canvas6 = document.getElementById("canvas6");
+  canvas6.addEventListener("dblclick", canvasClicked(6, painted, content), false);
 
-    module.exports.painted = painted;
-    module.exports.content = content;
-    module.exports.winningCombinations = winningCombinations;
+  var canvas7 = document.getElementById("canvas7");
+  canvas7.addEventListener("dblclick", canvasClicked(7, painted, content), false);
 
-  };
+  var canvas8 = document.getElementById("canvas8");
+  canvas8.addEventListener("dblclick", canvasClicked(8, painted, content), false);
+
+  var canvas9 = document.getElementById("canvas9");
+  canvas9.addEventListener("dblclick", canvasClicked(9, painted, content), false);
+
+  console.log("This is after we add the listeners");
 
 };
-
