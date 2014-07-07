@@ -7,9 +7,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
-
     clean: ['dist'],
-
     copy: {
         all: {
             expand: true,
@@ -20,7 +18,6 @@ module.exports = function(grunt) {
             filter: 'isFile'
         }
     },
-
     browserify: {
         standalone: {
             src: 'app/*.js',
@@ -30,36 +27,25 @@ module.exports = function(grunt) {
             debug: true
         }
     },
-
     watch: {
         options: {
             livereload: true
         },
-
         html: {
             files: ['app/*.html', 'app/*.css'],
             tasks: ['copy']
         },
-
         js: {
             files: '<%= browserify.standalone.src %>',
             tasks: ['jshint', 'browserify:standalone']
-        },
-
-        testjs: {
-            files: '<%= browserify.test.src %>',
-            tasks: ['browserify:test']
         }
-
     },
-
     jshint: {
       options: {
         jshintrc: true
       },
       all: ['Gruntfile.js', 'server.js', 'app/*.js']
     },
-
     express: {
         dev: {
             options: {

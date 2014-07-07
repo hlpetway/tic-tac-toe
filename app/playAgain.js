@@ -1,12 +1,12 @@
+"use strict";
+
 module.exports = function playAgain(){
-  var y;
-  y = window.prompt("Play Again?");
+  var y = prompt("Play Again?");
   if(y === true){
     console.log("Okay! ^^/>");
-    location.reload(true);
+    document.location.reload(true);
   }
   else {
     console.log("So Long, Sucker!");
   }
-}
 };

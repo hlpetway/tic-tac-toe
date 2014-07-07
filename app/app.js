@@ -5,12 +5,10 @@ var playAgain = require("./playAgain");
 
 var app = function(){
 
-var painted;
-var content;
-var winningCombinations;
+  var painted;
+  var content;
+  var winningCombinations;
 
-//Instanciate Arrays
-window.onload=function(){
   painted = [];
   content = [];
   winningCombinations = [[0,1,2],[3,4,5],[6,7,8],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
@@ -21,10 +19,4 @@ window.onload=function(){
   }
 };
 
-canvasClicked();
-checkForWinners();
-playAgain();
-
-
-};
-app();
+//we need a click listener to queue the canvasClicked().

@@ -6,4 +6,4 @@ module.exports = function checkForWinners(symbol) {
       playAgain();
     }
     }
-}
+};
