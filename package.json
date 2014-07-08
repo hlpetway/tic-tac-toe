@@ -1,5 +1,5 @@
 {
-  "name": "go-outside",
+  "name": "tic-tac-toe",
   "main": "server.js",
   "dependencies": {
     "express": "^4.0",

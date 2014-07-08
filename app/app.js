@@ -6,7 +6,7 @@ window.onload=function(){
 
   var painted = [];
   var content = [];
-  var turn = [0];     //Replace this with a closure in canvasClicked
+  var turn = [0];     //Todo: Replace this with a closure in canvasClicked
   var squaresFilled = [0];
 
   for(var i = 0; i <= 8; i++) {
@@ -14,7 +14,7 @@ window.onload=function(){
   content[i] = "";
   }
 
-  // turn canvasclicked's parameters into an options object.
+  //Todo: Turn canvasclicked's parameters into an options object.
 
   var canvas1 = document.getElementById("canvas1");
   canvas1.addEventListener("dblclick", function(){canvasClicked(1, painted, turn, squaresFilled, content)});

@@ -66,6 +66,8 @@ module.exports = function (canvasNumber, painted, turn, squaresFilled, content) 
       cxt.lineTo(40,40);
       cxt.moveTo(40,10);
       cxt.lineTo(10,40);
+      cxt.strokeStyle = "#ff0000";
+      cxt.lineWidth = 3;
       cxt.stroke();
       cxt.closePath();
       content[canvasNumber-1] = "X";
@@ -73,6 +75,8 @@ module.exports = function (canvasNumber, painted, turn, squaresFilled, content) 
     else {
       cxt.beginPath();
       cxt.arc(25,25,20,0,Math.PI*2, true);
+      cxt.strokeStyle = "#ff0000";
+      cxt.lineWidth = 3;
       cxt.stroke();
       cxt.closePath();
       content[canvasNumber-1] = "0";
@@ -81,7 +85,6 @@ module.exports = function (canvasNumber, painted, turn, squaresFilled, content) 
     painted[canvasNumber-1] = true;
     squaresFilled[0] = squaresFilled[0] + 1;
     checkForWinners(content[canvasNumber-1], content);
-    console.log(squaresFilled);
 
     if(squaresFilled[0] === 9){
       window.alert("The Game Is Over!");
