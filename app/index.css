@@ -3,20 +3,22 @@
 body{
 
   text-align: center;
+  font-family: Arial;
+  margin-left: 100px;
 
 }
 
 #box{
 
   text-align: left;
-  left-margin: 50px;
+  left-margin: 100px;
 
 }
 
-/*canvas{
+canvas{
 
   position:center;
-  -webkit-animation:canvasAnimation 5s;
+  -webkit-animation:canvasAnimation 1s;
 
 }
 
@@ -24,6 +26,6 @@ body{
 
   0%   {-webkit-transform:rotate(90deg);left:0px; top:0px;}
 
-}*/
+}
 
 
