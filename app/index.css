@@ -2,22 +2,25 @@
 
 body{
 
-  text-align: center;
-  font-family: Arial;
-  margin-left: 100px;
 
 }
 
 #box{
 
-  text-align: left;
-  left-margin: 100px;
+  text-align: center;
+  font-family: Arial;
+  margin: 100px;
+  border-width: 2px;
+  border-style: solid;
+  height: 500px;
+  background-color: #99CCFF;
 
 }
 
 canvas{
 
   position:center;
+  background-color: #FFFFFF;
   -webkit-animation:canvasAnimation 1s;
 
 }
