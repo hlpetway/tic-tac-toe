@@ -2,43 +2,20 @@
 
 body{
 
-  text-align:center;
-}
-
-.box{
-
-  text-align:left;
-  width:auto;
-  height:auto;
+  text-align: center;
 
 }
 
-//Here's Our Animations
+#box{
 
-h3{
-
-  position:relative;
-  -webkit-animation:h3Animation 5s;
+  text-align: left;
+  left-margin: 50px;
 
 }
 
-h1{
+/*canvas{
 
-  position:relative;
-  -webkit-animation:h1Animation 5s;
-
-}
-
-h2{
-
-  position:relative;
-  -webkit-animation:h2Animation 5s;
-
-}
-
-canvas{
-
-  position:relative;
+  position:center;
   -webkit-animation:canvasAnimation 5s;
 
 }
@@ -47,6 +24,6 @@ canvas{
 
   0%   {-webkit-transform:rotate(90deg);left:0px; top:0px;}
 
-}
+}*/
 
 

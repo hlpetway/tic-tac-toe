@@ -4,16 +4,14 @@
 var playAgain = require("./playAgain");
 var checkForWinners = require("./checkForWinners");
 
-module.exports = function (canvasNumber, painted, content) {
+module.exports = function (canvasNumber, painted, turn, squaresFilled, content) {
 
-  var turn = 0;
-  var squaresFilled = 0;
   var theCanvas = "canvas" + canvasNumber;
   var c = document.getElementById(theCanvas);
   var cxt = c.getContext("2d");
 
   if(painted[canvasNumber-1] === false){
-    if(turn % 2 === 0){
+    if(turn[0] % 2 === 0){                //Replace this as well.
       cxt.beginPath();
       cxt.moveTo(10,10);
       cxt.lineTo(40,40);
@@ -30,18 +28,19 @@ module.exports = function (canvasNumber, painted, content) {
       cxt.closePath();
       content[canvasNumber-1] = "0";
     }
-    turn++;
+    turn[0] = turn[0] + 1;                //Replace this with a closure.
     painted[canvasNumber-1] = true;
-    squaresFilled++;
+    squaresFilled[0] = squaresFilled[0] + 1;
     checkForWinners(content[canvasNumber-1], content);
+    console.log(squaresFilled);
 
-    if(squaresFilled === 9){
-      console.log("The Game Is Over!");
+    if(squaresFilled[0] === 9){
+      window.alert("The Game Is Over!");
       playAgain();
     }
 
   } else {
-    console.log("That Space Is already Occupied With Your Heart!");
+    window.alert("That Space Is already Occupied!");
   }
 };
 
