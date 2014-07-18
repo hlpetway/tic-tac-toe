@@ -2,8 +2,8 @@
 
 body{
 
-  margin:0;
-  width: 800px;
+  margin:auto;
+
 
 }
 
@@ -17,7 +17,8 @@ p{
 
   text-align: center;
   font-family: Helvetica;
-  margin: 100px;
+  margin: auto;
+  margin-top: 100px;
   padding: 30px;
   border-width: 2px;
   border-style: solid;
@@ -29,7 +30,7 @@ p{
 
 canvas{
 
-  position:center;
+margin: auto;
   background-color: #FFFFFF;
   -webkit-animation:canvasAnimation 1s;
 
@@ -42,12 +43,10 @@ canvas{
 }
 
 .middle-row{
-  clear: both;
-  position: center;
+  margin: auto;
 }
 
 .bottom-row{
-  clear: both;
-  position: center;
+  margin: auto;
 }
 
