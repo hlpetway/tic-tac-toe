@@ -7,10 +7,16 @@ body{
 
 }
 
+p{
+
+  font-family: Helvetica;
+  font-style: italic;
+}
+
 #playArea{
 
   text-align: center;
-  font-family: Arial;
+  font-family: Helvetica;
   margin: 100px;
   padding: 30px;
   border-width: 2px;
