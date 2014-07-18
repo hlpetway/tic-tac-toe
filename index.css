@@ -30,7 +30,7 @@ p{
 
 canvas{
 
-margin: auto;
+  margin: auto;
   background-color: #FFFFFF;
   -webkit-animation:canvasAnimation 1s;
 
@@ -40,6 +40,11 @@ margin: auto;
 
   0%   {-webkit-transform:rotate(90deg);left:0px; top:0px;}
 
+}
+
+.top-row{
+  margin: auto;
+  margin-top: 30px;
 }
 
 .middle-row{
