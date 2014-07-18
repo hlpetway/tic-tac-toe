@@ -2,17 +2,21 @@
 
 body{
 
+  margin: 0;
+  width: 800px;
 
 }
 
-#box{
+#playarea{
 
   text-align: center;
   font-family: Arial;
   margin: 100px;
+  padding: 30px;
   border-width: 2px;
   border-style: solid;
-  height: 500px;
+  height: 400px;
+  width: 600px;
   background-color: #99CCFF;
 
 }
@@ -31,4 +35,12 @@ canvas{
 
 }
 
+.middle-row{
+  clear: both;
+  position: center;
+}
 
+.bottom-row{
+  clear:both;
+  position: center;
+}
